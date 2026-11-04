@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Science — Gordon Oboh</title>
+  <title>Data Science — Ayotunde Omotoso</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2367e8f9' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 6v6l4 2'/></svg>">
+
   <style>
     :root[data-theme="dark"] {
       --bg: #020617;
@@ -16,6 +17,7 @@
       --accent: #67e8f9;
       --accent-dim: rgba(103,232,249,0.1);
     }
+
     :root[data-theme="light"] {
       --bg: #ffffff;
       --surface: rgba(0,0,0,0.03);
@@ -27,7 +29,12 @@
       --accent-dim: rgba(8,145,178,0.1);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -39,100 +46,229 @@
       transition: background 0.2s, color 0.2s;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* ── Navigation ── */
-    .nav-bar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 2rem; border-bottom: 1px solid var(--border);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .logo-name { font-size: 0.95rem; font-weight: 600; }
+    /* Navigation */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-    nav { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; }
-    nav a { color: var(--muted); transition: color 0.2s; }
+    .logo-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
     nav a:hover { color: var(--text); }
 
     #toggle {
-      background: none; border: 1px solid var(--border); color: var(--muted);
-      border-radius: 6px; padding: 0.35rem 0.75rem; font-size: 0.85rem;
-      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
     }
-    #toggle:hover { border-color: var(--accent); color: var(--text); }
+
+    #toggle:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
 
     main { position: relative; }
 
     .blob-1 {
-      position: absolute; left: -6rem; top: -6rem; width: 18rem; height: 18rem;
-      border-radius: 50%; background: rgba(103,232,249,0.10); filter: blur(80px); pointer-events: none;
+      position: absolute;
+      left: -6rem;
+      top: -6rem;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      background: rgba(103,232,249,0.10);
+      filter: blur(80px);
+      pointer-events: none;
     }
 
-    .page-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
 
     .back {
-      margin-bottom: 2rem; display: inline-block; font-size: 0.9rem; color: var(--muted);
-      display: inline-flex; align-items: center; gap: 0.25rem; transition: color 0.2s;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
     }
+
     .back:hover { color: var(--accent); }
 
-    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-    .tagline { font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
 
     h2 {
-      font-size: 0.8rem; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
     }
 
-    .projects { display: flex; flex-direction: column; gap: 1rem; }
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     .card {
-      border: 1px solid var(--border); border-radius: 1.5rem;
-      padding: 1.5rem; background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      background: var(--surface);
       transition: border-color 0.15s, background 0.15s;
     }
-    .card:hover { border-color: var(--accent); background: var(--surface-hover); }
 
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-    .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .card-title a { color: var(--text); transition: color 0.2s; }
+    .card:hover {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title a {
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
     .card-title a:hover { color: var(--accent); }
-    .card-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.9rem; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
     .tag {
-      font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px;
-      border: 1px solid var(--border); color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
     }
 
     .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
     }
+
     .skill-group {
-      border-radius: 1rem; border: 1px solid var(--border);
-      background: var(--surface); padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 0.9rem 1rem;
     }
+
     .skill-group .label {
-      font-size: 0.75rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
     }
-    .skill-group .items { font-size: 0.9rem; }
+
+    .skill-group .items {
+      font-size: 0.9rem;
+    }
 
     section { margin-bottom: 4rem; }
-    p { color: var(--muted); max-width: 560px; }
+
+    p {
+      color: var(--muted);
+      max-width: 560px;
+    }
 
     footer {
-      text-align: center; padding: 2rem;
-      font-size: 0.8rem; color: var(--muted);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
       border-top: 1px solid var(--border);
     }
 
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-in { animation: fadeInUp 0.6s ease-out forwards; }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
   </style>
 </head>
+
 <body>
   <div class="nav-bar">
-    <span class="logo-name">Gordon Oboh</span>
+    <span class="logo-name">Ayotunde Omotoso</span>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
@@ -148,146 +284,219 @@
     <div class="page-wrap animate-in">
       <a class="back" href="index.html">&larr; Home</a>
 
+      <!-- Hero -->
       <section class="hero">
         <h1>Data Science</h1>
-        <p class="tagline">Exploratory analysis, machine learning, and statistical modeling projects.</p>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://github.com/GordonOboh/conus-realestate-eda" target="_blank">CONUS Real Estate EDA</a>
-                </div>
-                <p class="card-desc">
-                  Exploratory analysis of ~700,000 U.S. rental listings. Covers regional pricing patterns,
-                  property size distributions, amenity breakdowns, and geospatial visualization overlaid
-                  on Stadia Maps tiles.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">R</span>
-              <span class="tag">ggplot2</span>
-              <span class="tag">ggmap</span>
-              <span class="tag">tidyverse</span>
-              <span class="tag">Geospatial</span>
-              <span class="tag">EDA</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://github.com/GordonOboh/RecessionPredictionML" target="_blank">Recession Prediction ML</a>
-                </div>
-                <p class="card-desc">
-                  Machine learning models trained on macroeconomic indicators to predict U.S. recession
-                  probability. Compares multiple classifiers with feature importance and evaluation metrics.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">scikit-learn</span>
-              <span class="tag">pandas</span>
-              <span class="tag">matplotlib</span>
-              <span class="tag">Classification</span>
-              <span class="tag">Feature Engineering</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://github.com/GordonOboh/MonU_Applied_DataS_cience_Project" target="_blank">U.S. Housing Price Feature Analysis</a>
-                </div>
-                <p class="card-desc">
-                  Ensemble regression models on ~385,000 Craigslist rental listings to identify which
-                  property features drive pricing. Pipeline covers EDA, IQR-based cleaning, K-Means
-                  location clustering, and target encoding.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">scikit-learn</span>
-              <span class="tag">pandas</span>
-              <span class="tag">K-Means</span>
-              <span class="tag">Ensemble Models</span>
-              <span class="tag">Feature Engineering</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Skills & Tools</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <div class="label">Languages</div>
-            <div class="items">R · Python · SQL</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Visualization</div>
-            <div class="items">ggplot2 · matplotlib · seaborn</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Data Wrangling</div>
-            <div class="items">tidyverse · pandas · dplyr · NumPy · SciPy</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Machine Learning</div>
-            <div class="items">scikit-learn · Random Forest · Gradient Boosting · classification · regression</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Clustering</div>
-            <div class="items">K-Means · target encoding · feature importance</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Geospatial</div>
-            <div class="items">ggmap · Stadia Maps · coordinate filtering</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Statistics</div>
-            <div class="items">IQR outlier removal · Pearson & Spearman correlation · feature engineering</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Environment</div>
-            <div class="items">Jupyter · RStudio · Git</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Open to data science opportunities. Reach out via
-          <a href="mailto:goboh@position.8shield.net" style="color: var(--accent);">email</a> or
-          <a href="https://github.com/GordonOboh" target="_blank" style="color: var(--accent);">GitHub</a>.
+        <p class="tagline">
+          Exploring data analysis, statistical modeling,
+          machine learning, and data-driven approaches
+          to engineering and technology.
         </p>
       </section>
+
+      <!-- Project Areas -->
+      <section id="projects">
+        <h2>Areas of Interest & Project Ideas</h2>
+
+        <div class="projects">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Automotive Data Analysis
+                </div>
+                <p class="card-desc">
+                  Interested in analyzing vehicle performance,
+                  diagnostic information, and automotive system
+                  data to identify patterns, investigate faults,
+                  and support engineering decisions. Potential
+                  applications include vehicle reliability,
+                  sensor data analysis, and predictive maintenance.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Automotive Engineering</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Diagnostics</span>
+              <span class="tag">Predictive Maintenance</span>
+              <span class="tag">Sensor Data</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Machine Learning & Predictive Modeling
+                </div>
+                <p class="card-desc">
+                  Exploring how machine learning and statistical
+                  techniques can be applied to engineering
+                  problems. Areas of interest include predictive
+                  modeling, classification, anomaly detection,
+                  and using historical data to improve
+                  system reliability and decision-making.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Predictive Modeling</span>
+              <span class="tag">Classification</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">Anomaly Detection</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Engineering Data & System Performance
+                </div>
+                <p class="card-desc">
+                  Interested in using data visualization,
+                  performance metrics, and technical analysis
+                  to understand complex engineering systems.
+                  Potential applications include fault trend
+                  analysis, operational reporting, quality
+                  monitoring, and improving technical
+                  troubleshooting workflows.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Engineering Analytics</span>
+              <span class="tag">Data Visualization</span>
+              <span class="tag">Quality Monitoring</span>
+              <span class="tag">Performance Metrics</span>
+              <span class="tag">Root Cause Analysis</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills & Tools -->
+      <section id="skills">
+        <h2>Skills & Tools</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+            <div class="label">Engineering Data</div>
+            <div class="items">
+              Vehicle Diagnostics · Technical Analysis ·
+              System Performance
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Data Science Interests</div>
+            <div class="items">
+              Exploratory Analysis · Machine Learning ·
+              Predictive Modeling
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Visualization</div>
+            <div class="items">
+              Data Visualization · Performance Trends ·
+              Technical Reporting
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Statistics</div>
+            <div class="items">
+              Statistical Analysis · Pattern Recognition ·
+              Engineering Metrics
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Automotive Systems</div>
+            <div class="items">
+              CANBUS · Vehicle Electronics ·
+              Infotainment Diagnostics
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Cloud & Technology</div>
+            <div class="items">
+              Microsoft Azure · Cloud Fundamentals ·
+              System Monitoring
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Technical Methods</div>
+            <div class="items">
+              Root Cause Analysis · Troubleshooting ·
+              Technical Documentation
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Environment</div>
+            <div class="items">
+              Git · GitHub · Microsoft Azure ·
+              Windows
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact</h2>
+
+        <p>
+          Open to opportunities involving Data Science,
+          Automotive Engineering, Engineering Analytics,
+          and related technical fields.
+          Feel free to connect via
+          <a href="mailto:ayozille13@gmail.com"
+             style="color: var(--accent);">Email</a> or
+          <a href="https://github.com/Tundeeeeee"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="color: var(--accent);">GitHub</a>.
+        </p>
+      </section>
+
     </div>
   </main>
 
   <footer>
-    &copy; 2026 Gordon Oboh
+    &copy; 2026 Ayotunde Omotoso
   </footer>
 
   <script>
     const toggle = document.getElementById('toggle');
-    const root   = document.documentElement;
+    const root = document.documentElement;
 
     const saved = localStorage.getItem('theme') || 'dark';
     root.setAttribute('data-theme', saved);
     toggle.textContent = saved === 'dark' ? 'Light' : 'Dark';
 
     toggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const next =
+        root.getAttribute('data-theme') === 'dark'
+          ? 'light'
+          : 'dark';
+
       root.setAttribute('data-theme', next);
       toggle.textContent = next === 'dark' ? 'Light' : 'Dark';
       localStorage.setItem('theme', next);

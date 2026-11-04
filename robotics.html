@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robotics — Gordon Oboh</title>
+  <title>Robotics — Ayotunde Omotoso</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2367e8f9' stroke-width='2'><circle cx='12' cy='12' r='10'/><path d='M12 6v6l4 2'/></svg>">
   <style>
     :root[data-theme="dark"] {
@@ -16,6 +16,7 @@
       --accent: #67e8f9;
       --accent-dim: rgba(103,232,249,0.1);
     }
+
     :root[data-theme="light"] {
       --bg: #ffffff;
       --surface: rgba(0,0,0,0.03);
@@ -27,7 +28,12 @@
       --accent-dim: rgba(8,145,178,0.1);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -41,98 +47,221 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ── Navigation ── */
+    /* Navigation */
     .nav-bar {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 2rem; border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo-name { font-size: 0.95rem; font-weight: 600; }
+    .logo-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
 
-    nav { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; }
-    nav a { color: var(--muted); transition: color 0.2s; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
     nav a:hover { color: var(--text); }
 
     #toggle {
-      background: none; border: 1px solid var(--border); color: var(--muted);
-      border-radius: 6px; padding: 0.35rem 0.75rem; font-size: 0.85rem;
-      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
     }
-    #toggle:hover { border-color: var(--accent); color: var(--text); }
+
+    #toggle:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
 
     main { position: relative; }
 
     .blob-1 {
-      position: absolute; left: -6rem; top: -6rem; width: 18rem; height: 18rem;
-      border-radius: 50%; background: rgba(103,232,249,0.10); filter: blur(80px); pointer-events: none;
+      position: absolute;
+      left: -6rem;
+      top: -6rem;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      background: rgba(103,232,249,0.10);
+      filter: blur(80px);
+      pointer-events: none;
     }
 
-    .page-wrap { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
 
     .back {
-      margin-bottom: 2rem; display: inline-block; font-size: 0.9rem; color: var(--muted);
-      display: inline-flex; align-items: center; gap: 0.25rem; transition: color 0.2s;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
     }
+
     .back:hover { color: var(--accent); }
 
-    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-    .tagline { font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem; }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
 
     h2 {
-      font-size: 0.8rem; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5rem;
     }
 
-    .projects { display: flex; flex-direction: column; gap: 1rem; }
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     .card {
-      border: 1px solid var(--border); border-radius: 1.5rem;
-      padding: 1.5rem; background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      background: var(--surface);
       transition: border-color 0.15s, background 0.15s;
     }
-    .card:hover { border-color: var(--accent); background: var(--surface-hover); }
 
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-    .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .card-title a { color: var(--text); transition: color 0.2s; }
+    .card:hover {
+      border-color: var(--accent);
+      background: var(--surface-hover);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title a {
+      color: var(--text);
+      transition: color 0.2s;
+    }
+
     .card-title a:hover { color: var(--accent); }
-    .card-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.9rem; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
     .tag {
-      font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px;
-      border: 1px solid var(--border); color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
     }
 
     .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75rem;
     }
+
     .skill-group {
-      border-radius: 1rem; border: 1px solid var(--border);
-      background: var(--surface); padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 0.9rem 1rem;
     }
+
     .skill-group .label {
-      font-size: 0.75rem; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
     }
+
     .skill-group .items { font-size: 0.9rem; }
 
     section { margin-bottom: 4rem; }
-    p { color: var(--muted); max-width: 560px; }
+
+    p {
+      color: var(--muted);
+      max-width: 560px;
+    }
 
     footer {
-      text-align: center; padding: 2rem;
-      font-size: 0.8rem; color: var(--muted);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
       border-top: 1px solid var(--border);
     }
 
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-in { animation: fadeInUp 0.6s ease-out forwards; }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
   </style>
 </head>
+
 <body>
   <div class="nav-bar">
-    <span class="logo-name">Gordon Oboh</span>
+    <span class="logo-name">Ayotunde Omotoso</span>
     <nav>
       <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
@@ -148,162 +277,236 @@
     <div class="page-wrap animate-in">
       <a class="back" href="index.html">&larr; Home</a>
 
+      <!-- Hero -->
       <section class="hero">
         <h1>Robotics</h1>
-        <p class="tagline">Control systems, mechatronics, kinematics, and robot design — academic projects and STEM mentorship.</p>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://gordonoboh.github.io/nyu-advanced-mechatronics/" target="_blank">Advanced Mechatronics</a>
-                </div>
-                <p class="card-desc">
-                  NYU ROB-GY 6203 — mechatronic system design combining mechanical, electrical, and
-                  software engineering. Projects include Arduino-controlled propeller balancing, a
-                  line-following robot, and an autonomous surface vessel.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">C/C++</span>
-              <span class="tag">Arduino</span>
-              <span class="tag">Control Systems</span>
-              <span class="tag">CAD</span>
-              <span class="tag">Sensors</span>
-              <span class="tag">NYU Coursework</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://gordonoboh.github.io/lego-spike-prime-robotics-mentorship/" target="_blank">LEGO SPIKE Prime Robotics Mentorship</a>
-                </div>
-                <p class="card-desc">
-                  Mentored middle-school scholars through a project-based robotics curriculum using LEGO
-                  SPIKE Prime kits. Covers line-following, ultrasonic obstacle avoidance, and a
-                  culminating car design project.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">LEGO SPIKE Prime</span>
-              <span class="tag">Mentorship</span>
-              <span class="tag">STEM Education</span>
-              <span class="tag">Sensors</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://gordonoboh.github.io/inverse-kinematics-presentation/" target="_blank">Inverse Kinematics Presentation</a>
-                </div>
-                <p class="card-desc">
-                  Educational presentation on inverse kinematics concepts for robotic manipulators.
-                  Covers forward vs. inverse kinematics, Denavit-Hartenberg parameters, and analytical
-                  versus numerical solution methods.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">Kinematics</span>
-              <span class="tag">Robotic Manipulators</span>
-              <span class="tag">D-H Parameters</span>
-              <span class="tag">Presentation</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">
-                  <a href="https://github.com/GordonOboh/optlearningcontrol/tree/mainPersonal" target="_blank">Optimal & Learning Control for Robotics</a>
-                </div>
-                <p class="card-desc">
-                  Coursework from NYU ROB-GY 6323 — reinforcement learning and optimal control applied
-                  to robotics problems. Implemented in Python using NumPy and SciPy across Jupyter notebooks.
-                </p>
-              </div>
-            </div>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Reinforcement Learning</span>
-              <span class="tag">Optimal Control</span>
-              <span class="tag">NumPy</span>
-              <span class="tag">Jupyter</span>
-              <span class="tag">NYU Coursework</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Skills & Tools</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <div class="label">Languages</div>
-            <div class="items">Python · C/C++ · MATLAB</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Microcontrollers</div>
-            <div class="items">Arduino · LEGO SPIKE Prime · Propeller Board</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Control & Kinematics</div>
-            <div class="items">optimal control · PID · inverse kinematics · D-H parameters</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Reinforcement Learning</div>
-            <div class="items">policy optimization · value-based methods · robotics applications</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Hardware & Sensors</div>
-            <div class="items">ultrasonic · IR · motor control · PWM · line-following</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Design & Simulation</div>
-            <div class="items">CAD · circuit design · system modeling</div>
-          </div>
-          <div class="skill-group">
-            <div class="label">Environment</div>
-            <div class="items">Jupyter · Git · GitHub Pages</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Open to robotics opportunities. Reach out via
-          <a href="mailto:goboh@position.8shield.net" style="color: var(--accent);">email</a> or
-          <a href="https://github.com/GordonOboh" target="_blank" style="color: var(--accent);">GitHub</a>.
+        <p class="tagline">
+          Exploring robotics, mechatronics, control systems,
+          and intelligent engineering through academic knowledge
+          and hands-on technical experience.
         </p>
       </section>
+
+      <!-- Projects and Experience -->
+      <section id="projects">
+        <h2>Projects & Technical Experience</h2>
+
+        <div class="projects">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Mechatronics Engineering
+                </div>
+                <p class="card-desc">
+                  Engineering background integrating mechanical,
+                  electrical, and electronic systems. Areas of
+                  study include sensors, actuators, automation,
+                  control systems, and electromechanical design.
+                  Built on a Bachelor of Engineering in
+                  Mechatronics Engineering.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Mechatronics</span>
+              <span class="tag">Control Systems</span>
+              <span class="tag">Sensors</span>
+              <span class="tag">Automation</span>
+              <span class="tag">System Integration</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Automotive Electronics & Infotainment Systems
+                </div>
+                <p class="card-desc">
+                  Hands-on experience installing, configuring,
+                  and troubleshooting aftermarket automotive
+                  infotainment systems. Work includes CANBUS
+                  integration, vehicle-specific configurations,
+                  climate-control interfaces, factory cameras,
+                  audio systems, and electrical diagnostics.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">CANBUS</span>
+              <span class="tag">Vehicle Electronics</span>
+              <span class="tag">Infotainment</span>
+              <span class="tag">Diagnostics</span>
+              <span class="tag">System Integration</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Control Systems & Robotics
+                </div>
+                <p class="card-desc">
+                  Academic foundation and technical interests
+                  in robotic systems, feedback control,
+                  kinematics, automation, and intelligent
+                  machines. Interested in applying
+                  mechatronics principles to robotic motion,
+                  sensing, and autonomous systems.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Kinematics</span>
+              <span class="tag">Control Theory</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Mechatronics</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Technical Diagnostics & Engineering Support
+                </div>
+                <p class="card-desc">
+                  Practical experience diagnosing hardware,
+                  software, and electrical system issues.
+                  Activities include voltage testing,
+                  interpreting wiring diagrams, identifying
+                  configuration faults, troubleshooting
+                  connectivity problems, and documenting
+                  technical solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="tags">
+              <span class="tag">Troubleshooting</span>
+              <span class="tag">Multimeter Testing</span>
+              <span class="tag">Hardware Diagnostics</span>
+              <span class="tag">Root Cause Analysis</span>
+              <span class="tag">Technical Support</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2>Skills & Tools</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-group">
+            <div class="label">Engineering</div>
+            <div class="items">
+              Mechatronics · Automotive Engineering ·
+              System Integration
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Robotics & Control</div>
+            <div class="items">
+              Robotics Fundamentals · Kinematics ·
+              Feedback Control · Automation
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Automotive Systems</div>
+            <div class="items">
+              CANBUS · Infotainment · Vehicle Electronics ·
+              Climate Control Integration
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Hardware & Diagnostics</div>
+            <div class="items">
+              Sensors · Wiring Diagrams · Multimeter ·
+              Voltage Testing
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Technical Support</div>
+            <div class="items">
+              Troubleshooting · Root Cause Analysis ·
+              Firmware · Technical Documentation
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Design & Systems</div>
+            <div class="items">
+              Engineering Design · Control Systems ·
+              System Modeling · Electromechanical Systems
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="label">Technology</div>
+            <div class="items">
+              Git · GitHub · Networking ·
+              Microsoft Azure · Windows
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Open to opportunities in Robotics, Mechatronics,
+          Automotive Engineering, and related technical fields.
+          Feel free to connect via
+          <a href="mailto:ayozille13@gmail.com"
+             style="color: var(--accent);">Email</a> or
+          <a href="https://github.com/Tundeeeeee"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="color: var(--accent);">GitHub</a>.
+        </p>
+      </section>
+
     </div>
   </main>
 
   <footer>
-    &copy; 2026 Gordon Oboh
+    &copy; 2026 Ayotunde Omotoso
   </footer>
 
   <script>
     const toggle = document.getElementById('toggle');
-    const root   = document.documentElement;
+    const root = document.documentElement;
 
     const saved = localStorage.getItem('theme') || 'dark';
     root.setAttribute('data-theme', saved);
     toggle.textContent = saved === 'dark' ? 'Light' : 'Dark';
 
     toggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const next =
+        root.getAttribute('data-theme') === 'dark'
+          ? 'light'
+          : 'dark';
+
       root.setAttribute('data-theme', next);
       toggle.textContent = next === 'dark' ? 'Light' : 'Dark';
       localStorage.setItem('theme', next);

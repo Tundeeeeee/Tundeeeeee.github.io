@@ -3,62 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robotics — Gordon Oboh</title>
+
+  <meta name="description" content="Robotics and Mechatronics portfolio of Ayotunde Omotoso.">
+
+  <title>Robotics — Ayotunde Omotoso</title>
+
   <style>
     :root[data-theme="dark"] {
-      --bg:      #0d1117;
+      --bg: #0d1117;
       --surface: #161b22;
-      --border:  #30363d;
-      --text:    #e6edf3;
-      --muted:   #8b949e;
-      --accent:  #58a6ff;
-    }
-    :root[data-theme="light"] {
-      --bg:      #ffffff;
-      --surface: #f6f8fa;
-      --border:  #d0d7de;
-      --text:    #1f2328;
-      --muted:   #656d76;
-      --accent:  #0969da;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root[data-theme="light"] {
+      --bg: #ffffff;
+      --surface: #f6f8fa;
+      --border: #d0d7de;
+      --text: #1f2328;
+      --muted: #656d76;
+      --accent: #0969da;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
       transition: background 0.2s, color 0.2s;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-    /* ── Layout ── */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
       padding: 1.25rem 2rem;
       border-bottom: 1px solid var(--border);
     }
 
-    header nav { display: flex; gap: 1.5rem; font-size: 0.9rem; }
-    header nav a { color: var(--muted); }
-    header nav a:hover { color: var(--text); text-decoration: none; }
+    .logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
 
-    main { max-width: 760px; margin: 0 auto; padding: 4rem 2rem; }
+    header nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
 
-    section { margin-bottom: 4rem; }
+    header nav a {
+      color: var(--muted);
+    }
 
-    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-    h2 { font-size: 1.1rem; font-weight: 600; color: var(--muted); margin-bottom: 1.5rem;
-         text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
+    header nav a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
 
-    p { color: var(--muted); max-width: 560px; }
+    /* Main Layout */
 
-    /* ── Theme toggle ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* Theme Toggle */
+
     #toggle {
       background: none;
       border: 1px solid var(--border);
@@ -69,19 +133,48 @@
       cursor: pointer;
       transition: border-color 0.15s, color 0.15s;
     }
-    #toggle:hover { border-color: var(--accent); color: var(--text); }
 
-    /* ── Back link ── */
-    .back { margin-bottom: 2rem; display: inline-block; font-size: 0.9rem; color: var(--muted); }
-    .back:hover { color: var(--accent); }
+    #toggle:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
 
-    /* ── Hero ── */
-    .hero { padding-top: 0; }
-    .hero h1 { margin-bottom: 0.5rem; }
-    .hero .tagline { font-size: 1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    /* Back Link */
 
-    /* ── Project cards ── */
-    .projects { display: flex; flex-direction: column; gap: 1rem; }
+    .back {
+      margin-bottom: 2rem;
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .back:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 0;
+    }
+
+    .hero h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Project Cards */
+
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     .card {
       border: 1px solid var(--border);
@@ -90,15 +183,46 @@
       background: var(--surface);
       transition: border-color 0.15s;
     }
-    .card:hover { border-color: var(--accent); }
 
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-    .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .card-title a { color: var(--text); }
-    .card-title a:hover { color: var(--accent); text-decoration: none; }
-    .card-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .card:hover {
+      border-color: var(--accent);
+    }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .card-title a {
+      color: var(--text);
+    }
+
+    .card-title a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
     .tag {
       font-size: 0.75rem;
       padding: 0.15rem 0.55rem;
@@ -107,17 +231,38 @@
       color: var(--muted);
     }
 
-    /* ── Skills ── */
+    /* Skills */
+
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(
+        auto-fill, minmax(160px, 1fr)
+      );
       gap: 0.75rem;
     }
-    .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem 1rem; }
-    .skill-group .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
-    .skill-group .items { font-size: 0.9rem; color: var(--text); }
 
-    /* ── Footer ── */
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+    }
+
+    .skill-group .label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-group .items {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* Footer */
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -125,127 +270,109 @@
       color: var(--muted);
       border-top: 1px solid var(--border);
     }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+      header {
+        flex-wrap: wrap;
+        padding: 1rem;
+      }
+
+      header nav {
+        gap: 0.8rem;
+      }
+
+      main {
+        padding: 2.5rem 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Header -->
+
   <header>
-    <span style="font-weight:600; font-size:0.95rem;">Gordon Oboh</span>
-    <nav>
+    <a class="logo" href="index.html">
+      Ayotunde Omotoso
+    </a>
+
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#projects">Projects</a>
+      <a href="data-science.html">Data Science</a>
+      <a href="automotive.html">Automotive</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button id="toggle" aria-label="Toggle theme">Light</button>
+
+    <button id="toggle" type="button"
+      aria-label="Toggle theme">
+      Light
+    </button>
   </header>
 
   <main>
-    <a class="back" href="index.html">&larr; Home</a>
+
+    <!-- Back to Homepage -->
+
+    <a class="back" href="index.html">
+      &larr; Home
+    </a>
 
     <!-- Hero -->
+
     <section class="hero">
-      <h1>Robotics</h1>
-      <p class="tagline">Control systems, mechatronics, kinematics, and robot design — academic projects and STEM mentorship.</p>
+
+      <h1>Robotics &amp; Mechatronics</h1>
+
+      <p class="tagline">
+        Exploring the integration of mechanical
+        systems, electronics, programming, and
+        intelligent control through robotics
+        and mechatronics engineering.
+      </p>
+
     </section>
 
     <!-- Projects -->
+
     <section id="projects">
+
       <h2>Projects</h2>
+
       <div class="projects">
 
         <div class="card">
           <div class="card-header">
             <div>
+
               <div class="card-title">
-                <a href="https://gordonoboh.github.io/nyu-advanced-mechatronics/" target="_blank">
-                  Advanced Mechatronics
-                </a>
+                Robotics &amp; Mechatronics Projects
               </div>
+
               <p class="card-desc">
-                NYU ROB-GY 6203 — mechatronic system design combining mechanical, electrical, and
-                software engineering. Projects include Arduino-controlled propeller balancing, a
-                line-following robot, and an autonomous surface vessel.
+                This section is being prepared to
+                showcase robotics, embedded systems,
+                automation, and mechatronics projects,
+                including their design, implementation,
+                testing, and technical documentation.
               </p>
+
             </div>
           </div>
+
           <div class="tags">
-            <span class="tag">C/C++</span>
-            <span class="tag">Arduino</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">Mechatronics</span>
+            <span class="tag">Automation</span>
             <span class="tag">Control Systems</span>
-            <span class="tag">CAD</span>
-            <span class="tag">Sensors</span>
-            <span class="tag">NYU Coursework</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://gordonoboh.github.io/lego-spike-prime-robotics-mentorship/" target="_blank">
-                  LEGO SPIKE Prime Robotics Mentorship
-                </a>
-              </div>
-              <p class="card-desc">
-                Mentored middle-school scholars through a project-based robotics curriculum using LEGO
-                SPIKE Prime kits. Covers line-following, ultrasonic obstacle avoidance, and a
-                culminating car design project.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">LEGO SPIKE Prime</span>
-            <span class="tag">Mentorship</span>
-            <span class="tag">STEM Education</span>
-            <span class="tag">Sensors</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://gordonoboh.github.io/inverse-kinematics-presentation/" target="_blank">
-                  Inverse Kinematics Presentation
-                </a>
-              </div>
-              <p class="card-desc">
-                Educational presentation on inverse kinematics concepts for robotic manipulators.
-                Covers forward vs. inverse kinematics, Denavit-Hartenberg parameters, and analytical
-                versus numerical solution methods.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Kinematics</span>
-            <span class="tag">Robotic Manipulators</span>
-            <span class="tag">D-H Parameters</span>
-            <span class="tag">Presentation</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://github.com/GordonOboh/optlearningcontrol/tree/mainPersonal" target="_blank">
-                  Optimal &amp; Learning Control for Robotics
-                </a>
-              </div>
-              <p class="card-desc">
-                Coursework from NYU ROB-GY 6323 — reinforcement learning and optimal control applied
-                to robotics problems. Implemented in Python using NumPy and SciPy across Jupyter notebooks.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Reinforcement Learning</span>
-            <span class="tag">Optimal Control</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">NYU Coursework</span>
           </div>
         </div>
 
@@ -253,68 +380,182 @@
     </section>
 
     <!-- Skills -->
+
     <section id="skills">
+
       <h2>Skills &amp; Tools</h2>
+
       <div class="skills-grid">
+
+        <!-- Programming -->
+
         <div class="skill-group">
-          <div class="label">Languages</div>
-          <div class="items">Python · C/C++ · MATLAB</div>
+          <div class="label">
+            Programming
+          </div>
+          <div class="items">
+            Python · C++ · Java · MATLAB ·
+            OpenCV
+          </div>
         </div>
+
+        <!-- Microcontrollers -->
+
         <div class="skill-group">
-          <div class="label">Microcontrollers</div>
-          <div class="items">Arduino · LEGO SPIKE Prime · Propeller Board</div>
+          <div class="label">
+            Microcontrollers
+          </div>
+          <div class="items">
+            Arduino · Raspberry Pi ·
+            Embedded Systems
+          </div>
         </div>
+
+        <!-- Control Systems -->
+
         <div class="skill-group">
-          <div class="label">Control &amp; Kinematics</div>
-          <div class="items">optimal control · PID · inverse kinematics · D-H parameters</div>
+          <div class="label">
+            Control Systems
+          </div>
+          <div class="items">
+            PID Control · Motor Control ·
+            Stepper Motors · BLDC Motors ·
+            System Integration
+          </div>
         </div>
+
+        <!-- Electronics -->
+
         <div class="skill-group">
-          <div class="label">Reinforcement Learning</div>
-          <div class="items">policy optimization · value-based methods · robotics applications</div>
+          <div class="label">
+            Electronics &amp; Sensors
+          </div>
+          <div class="items">
+            PCB Design · KiCad · Soldering ·
+            Wiring Schematics · Ultrasonic Sensors ·
+            Force Sensors · Color Sensors ·
+            Temperature Sensors
+          </div>
         </div>
+
+        <!-- Mechanical Design -->
+
         <div class="skill-group">
-          <div class="label">Hardware &amp; Sensors</div>
-          <div class="items">ultrasonic · IR · motor control · PWM · line-following</div>
+          <div class="label">
+            Mechanical Design
+          </div>
+          <div class="items">
+            SolidWorks · AutoCAD ·
+            Mechanical Assembly ·
+            Rapid Prototyping ·
+            3D Printing · Laser Cutting
+          </div>
         </div>
+
+        <!-- Robotics -->
+
         <div class="skill-group">
-          <div class="label">Design &amp; Simulation</div>
-          <div class="items">CAD · circuit design · system modeling</div>
+          <div class="label">
+            Robotics &amp; Automation
+          </div>
+          <div class="items">
+            Mechatronic Systems ·
+            Sensor Integration ·
+            Electromechanical Systems ·
+            Automation ·
+            Computer Vision
+          </div>
         </div>
+
+        <!-- Development Tools -->
+
         <div class="skill-group">
-          <div class="label">Environment</div>
-          <div class="items">Jupyter · Git · GitHub Pages</div>
+          <div class="label">
+            Development Tools
+          </div>
+          <div class="items">
+            Git · GitHub · GitLab ·
+            Jupyter Notebook ·
+            Technical Documentation
+          </div>
         </div>
+
       </div>
     </section>
 
     <!-- Contact -->
+
     <section id="contact">
+
       <h2>Contact</h2>
-      <p>Open to robotics opportunities. Reach out via
-        <a href="mailto:goboh@position.8shield.net">email</a> or
-        <a href="https://github.com/GordonOboh" target="_blank">GitHub</a>.
+
+      <p>
+        Open to opportunities in robotics,
+        mechatronics, automation, embedded systems,
+        and related engineering fields.
+        Reach out via
+        <a href="mailto:ayozille13@gmail.com">
+          email
+        </a>
+        or
+        <a href="https://github.com/Tundeeeeee"
+          target="_blank"
+          rel="noopener noreferrer">
+          GitHub
+        </a>.
       </p>
+
     </section>
+
   </main>
 
+  <!-- Footer -->
+
   <footer>
-    &copy; 2026 Gordon Oboh
+    &copy; 2026 Ayotunde Omotoso
   </footer>
 
+  <!-- Dark / Light Theme Script -->
+
   <script>
-    const toggle = document.getElementById('toggle');
-    const root   = document.documentElement;
+    const toggle = document.getElementById("toggle");
+    const root = document.documentElement;
 
-    const saved = localStorage.getItem('theme') || 'dark';
-    root.setAttribute('data-theme', saved);
-    toggle.textContent = saved === 'dark' ? 'Light' : 'Dark';
+    let saved = "dark";
 
-    toggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      toggle.textContent = next === 'dark' ? 'Light' : 'Dark';
-      localStorage.setItem('theme', next);
+    try {
+      saved = localStorage.getItem("theme") || "dark";
+    } catch (error) {
+      saved = "dark";
+    }
+
+    if (saved !== "dark" && saved !== "light") {
+      saved = "dark";
+    }
+
+    root.setAttribute("data-theme", saved);
+
+    toggle.textContent =
+      saved === "dark" ? "Light" : "Dark";
+
+    toggle.addEventListener("click", () => {
+      const next =
+        root.getAttribute("data-theme") === "dark"
+          ? "light"
+          : "dark";
+
+      root.setAttribute("data-theme", next);
+
+      toggle.textContent =
+        next === "dark" ? "Light" : "Dark";
+
+      try {
+        localStorage.setItem("theme", next);
+      } catch (error) {
+        // The theme still changes without storage.
+      }
     });
   </script>
+
 </body>
 </html>
